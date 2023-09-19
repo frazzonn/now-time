@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NowTime</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <div id="container">
+      <button id="refresh">
+        Atualizar
+      </button>
+      <div id="time">
+        
+      </div>
+    </div>
+  </main>
+  <script>
+    const time = document.querySelector("#time");
+    const botao = document.querySelector("#refresh");
+
+    function refresh() {
+      const dataAtual = new Date();
+      const hora = dataAtual.getHours();
+      const min = dataAtual.getMinutes();
+      const sec = dataAtual.getSeconds();
+      time.innerHTML = `${hora}:${min}:${sec}` 
+    } 
+    
+    botao.addEventListener("click", refresh);
+  </script>
+</body>
+</html>
